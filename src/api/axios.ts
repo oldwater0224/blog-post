@@ -10,7 +10,7 @@ axiosInstance.interceptors.request.use(
     const token = sessionStorage.getItem("access_token"); // 정상적으로 요청이 들어갈 때 토큰입력("accessToken")
     if (token) {
       config.headers = config.headers || {};
-      config.headers.Authorization  = `Bearer ${token}`; // "문자열로 된것 백틱으로 수정해서 malformed 에러는 수정 됐지만 expired 문제는 아직 남았다."
+      config.headers.Authorization  = `Bearer ${token}`; // "문자열로 된것 백틱으로 수정해서 malformed token 에러 해결" , "Bearer " + token 도 가능
     }
     return config;
     //session storage 에 access token 이 있다면 매번 요청을 보낼 때 마다 Authorization 에 토큰값을 보내라 라는 의미
@@ -25,7 +25,7 @@ axiosInstance.interceptors.response.use(response => response , async(error) => {
   
   const originalRequest = error.config; // 요청이 실패했을 당시에 config 설정값 변수에 저장
   if(error.response && error.response.status === 401 && !retry){
-    retry = true;// 토큰이 계속 재발급 되면 안되기 때문에
+    retry = true;
     try{
       const res = await axiosInstance.post("/auth/refresh");
       if(!res.data.accessToken) throw new Error("Access token is missing");

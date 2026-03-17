@@ -18,7 +18,7 @@ export default function EmailLogin() {
   const handleLogin = async () => {
     setError("");
     try {
-      // 간단한 검증
+      // 유효성 검사
       if (email.trim() === "") {
         setError("Email required");
         return;
