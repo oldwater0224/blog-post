@@ -4,7 +4,7 @@ interface Author {
   nickname: string;
 }
 interface Comment {
-  // 댓글 타입 정의
+  
   author: Author;
   content: string;
   _id: string;

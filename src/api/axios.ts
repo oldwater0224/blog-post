@@ -10,7 +10,7 @@ axiosInstance.interceptors.request.use(
     const token = sessionStorage.getItem("access_token"); // 정상적으로 요청이 들어갈 때 토큰입력("accessToken")
     if (token) {
       config.headers = config.headers || {};
-      config.headers.Authorization  = `Bearer ${token}`; // "문자열로 된것 백틱으로 수정해서 malformed token 에러 해결" , "Bearer " + token 도 가능
+      config.headers.Authorization  = `Bearer ${token}`; // "문자열로 된것 백틱으로 수정해서 malformed token 에러 해결" , 
     }
     return config;
     //session storage 에 access token 이 있다면 매번 요청을 보낼 때 마다 Authorization 에 토큰값을 보내라 라는 의미
@@ -38,4 +38,5 @@ axiosInstance.interceptors.response.use(response => response , async(error) => {
       return Promise.reject(refreshError);
     }
   }
+  return Promise.reject(error);
 })
