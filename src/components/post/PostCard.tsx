@@ -11,7 +11,7 @@ export default function PostCard({_id , title , category , thumbnail , author , 
         data-discover="true"
       >
         <img
-          alt="The Impact of Technology on the Workplace: How Technology Is Changing"
+          alt={title}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
           src={thumbnail}
         />

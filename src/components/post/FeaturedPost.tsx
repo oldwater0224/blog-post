@@ -6,7 +6,7 @@ export default function FeaturedPost({ post }: { post: Post }) { // 테스트용
   return (
     <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-lg">
       <img
-        alt="The Impact of Technology on the Workplace: How Technology Is Changing"
+        alt={post.title}
         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
         src={post.thumbnail}
       />
@@ -28,7 +28,7 @@ export default function FeaturedPost({ post }: { post: Post }) { // 테스트용
             alt={post.author.nickname}
           />
           <div className="text-white">
-            <p className="text-sm font-medium"></p>
+            <p className="text-sm font-medium">{post.author.nickname}</p>
             <div className="flex items-center text-xs text-gray-300">
               <CalendarDays className="h-3 w-3 mr-1" aria-hidden="true" />
               <span>

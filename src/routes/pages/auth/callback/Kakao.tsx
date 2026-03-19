@@ -46,7 +46,7 @@ export default function Kakao() {
     setError("");
     try {
       if (accessToken) sessionStorage.setItem("access_token", accessToken);
-      const { data } = await axiosInstance.get("/auto/me");
+      const { data } = await axiosInstance.get("/auth/me");
       setUserData(data);
       navigate("/");
     } catch (e) {
