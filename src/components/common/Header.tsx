@@ -24,9 +24,7 @@ export default function Header() {
     <header className="bg-slate-900 text-white py-5 px-4 md:px-8">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <div className="h-8 w-8 bg-blue-500 rounded-full flex items-center justify-center mr-2">
-            <span className="text-white font-bold">S</span>
-          </div>
+          
           <span className="text-xl font-bold">SULOG</span>
         </Link>
         {/* 검색 기능 */}
