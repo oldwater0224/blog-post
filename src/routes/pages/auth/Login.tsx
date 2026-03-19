@@ -22,7 +22,7 @@ export default function Login() {
           <div className="space-y-4">
             {/* 이메일 로그인 버튼 */}
             <button
-              className="w-full flex items-center justify-center gap-2 bg-white text-slate-900 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium
+              className="w-full flex items-center justify-center gap-2 bg-white text-slate-900 py-3 rounded-lg hover:bg-slate-300 transition-colors font-medium
             "
               onClick={() => navigate("/auth/email-login")}
             >

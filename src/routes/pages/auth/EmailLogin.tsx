@@ -129,6 +129,7 @@ export default function EmailLogin() {
               <button
                 type="button"
                 className="flex-1 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                
               >
                 Back
               </button>
