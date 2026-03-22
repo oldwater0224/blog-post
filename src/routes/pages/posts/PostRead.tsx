@@ -31,7 +31,7 @@ export default function PostRead() {
 
   const deleteComment = async (commentId: string) => {
     try {
-      await axiosInstance.delete(`/posts/${post._id}/${commentId}`);
+      await axiosInstance.delete(`/posts/${post._id}/comments/${commentId}`);
       setComments((comments) =>
         comments.filter((comment) => comment._id !== commentId)
       );
@@ -91,7 +91,7 @@ export default function PostRead() {
               className="w-10 h-10 rounded-full mr-3"
             />
             <div>
-              <p className="text-white font-medium">{"Jason Francisco"}</p>
+              <p className="text-white font-medium">{post.author.nickname}</p>
               <div className="flex items-center text-sm text-gray-400">
                 <CalendarDays className="h-4 w-4 mr-1" />
                 <span>

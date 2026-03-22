@@ -36,7 +36,7 @@ export default function Kakao() {
       });
       navigate("/");
 
-      // api 받아오기 , 
+      
     } catch (e) {
       setEmail(e instanceof Error ? e.message : "unknown error");
     }
