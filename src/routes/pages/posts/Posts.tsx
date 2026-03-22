@@ -90,30 +90,28 @@ export default function Posts() {
       </div>
 
       {/* Post List - 정적 PostCard 예시 3개 */}
-      {posts && posts.length > 0 && ( // 없는 게시글 검색시에 비어있는 화면 처리
-        <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {posts &&
-              posts.map((post) => <PostCard key={post._id} {...post} />)}
-            {/* <PostCard />
-        <PostCard />
-        <PostCard /> */}
-          </div>
+      {posts &&
+        posts.length > 0 && ( // 없는 게시글 검색시에 비어있는 화면 처리
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {posts &&
+                posts.map((post) => <PostCard key={post._id} {...post} />)}
+            </div>
 
-          {/* Pagination */}
-          {pagination.maxPage > 1 && (
-            <Pagination
-              pageRange={5}
-              currentPage={page}
-              maxPage={pagination.maxPage}
-              onPageChange={(page: number) => handlePageChange(page)}
-            />
-          )}
-        </>
-      )}
+            {/* Pagination */}
+            {pagination.maxPage > 1 && (
+              <Pagination
+                pageRange={5}
+                currentPage={page}
+                maxPage={pagination.maxPage}
+                onPageChange={(page: number) => handlePageChange(page)}
+              />
+            )}
+          </>
+        )}
 
       {/* Ad Banner */}
-      {posts && posts.length === 0 && <PostZero  selectedCategory={category}/>}
+      {posts && posts.length === 0 && <PostZero selectedCategory={category} />}
       <div className="mt-12">
         <AdBanner />
       </div>

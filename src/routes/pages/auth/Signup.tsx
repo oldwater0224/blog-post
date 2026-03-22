@@ -16,7 +16,7 @@ export default function Signup() {
         const confirmPassword =
           (formData.get("confirmPassword") as string) || "";
 
-        //validation 검사 (입력 양식)
+        //유효성 검사 (입력 양식)
         if (email.trim() === "")
           return { error: "Email is required", payload: formData };
         if (nickname.trim() === "")
